@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="imagens/icon-gatito.webp">
+    <title>gatinho virtual :)</title>
+  </head>
+  <body>
+    <div class="principal">
+      <h1 class="titulo">sou seu gatinho! meu nome é</h1>
+      <img id="imgGato" src="imagens/empe.png" />
+      <div id="pop-up" class="hidden"></div>
+      <div class="acoes">
+        <input
+          type="button"
+          value="comida"
+          id="btn-alimentar"
+          class="btn-acao"
+        />
+        <p class="status" id="s-alimentar">status</p>
+
+        <input
+          type="button"
+          value="bebida"
+          id="btn-dar-bebida"
+          class="btn-acao"
+        />
+        <p class="status" id="s-bebida">status</p>
+
+        <input
+          type="button"
+          value="brincar"
+          id="btn-brincar"
+          class="btn-acao"
+        />
+        <p class="status" id="s-brincar">status</p>
+
+        <input
+          type="button"
+          value="carinho :)"
+          id="btn-carinho"
+          class="btn-acao"
+        />
+        <p class="status" id="s-carinho">status</p>
+
+        <input
+          type="button"
+          value="acordar"
+          id="btn-acordar"
+          class="btn-acao"
+        />
+        <p class="status" id="acordar">status</p>
+      </div>
+      <div class="conversa">
+        <div id="text"><h3>fale comigo!!!</h3></div>
+        <input type="text" id="mensagem" />
+        <input type="button" value="falar" id="conversar" />
+        <input type="button" value="limpar Chat" id="limpar-chat" />
+      </div>
+    </div>
+    <script src="javascript/variaveis.js"></script>
+    <script src="javascript/funcoes.js"></script>
+    <script src="javascript/controles.js"></script>
+  </body>
+</html>
