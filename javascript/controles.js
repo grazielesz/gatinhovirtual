@@ -1,21 +1,18 @@
 "use strict";
 const NOMEDOGATO = localStorage.getItem("nomeGato");
 
-//Variáveis do HTML
 const imagem = document.getElementById("imgGato");
 const caixaTexto = document.getElementById("text");
 const popUp = document.getElementById("pop-up"); 
 
 let gatoDormindo = false;
 
-//inicialização do página
 document.querySelector(".titulo").innerText += ` ${NOMEDOGATO}!`;
 inicializaStatus();
 
-//falar com o gato
 document.getElementById("conversar").addEventListener("click", function () {
   let textoUsuario = document.getElementById("mensagem");
-  //console.log(textoUsuario.value);
+  console.log(textoUsuario.value);
   if (!textoUsuario.value) {
     window.alert("você não digitou nada no campo de texto.");
     return;
@@ -28,6 +25,7 @@ document.getElementById("conversar").addEventListener("click", function () {
     "^-^",
     ">_<",
     "*ronronado*",
+    "oii!!",
   ];
   if (gatoDormindo) {
     aviso(`${NOMEDOGATO} está dormindo.`);
@@ -37,7 +35,6 @@ document.getElementById("conversar").addEventListener("click", function () {
   textoUsuario.value = "";
 });
 
-//alimentar
 document.getElementById("btn-alimentar").addEventListener("click", function () {
   if (gatoDormindo) {
     aviso(`${NOMEDOGATO} está dormindo.`);
@@ -47,7 +44,7 @@ document.getElementById("btn-alimentar").addEventListener("click", function () {
   aviso(`Você alimentou ${NOMEDOGATO}.`);
 });
 
-//BEBIDA
+
 document
   .getElementById("btn-dar-bebida")
   .addEventListener("click", function () {
@@ -59,7 +56,7 @@ document
     aviso(`Você deu algo para ${NOMEDOGATO} beber.`);
   });
 
-//brincar
+
 document.getElementById("btn-brincar").addEventListener("click", function () {
   if (gatoDormindo) {
     aviso(`${NOMEDOGATO} está dormindo.`);
@@ -69,7 +66,7 @@ document.getElementById("btn-brincar").addEventListener("click", function () {
   aviso(`Você brincou com ${NOMEDOGATO}.`);
 });
 
-//carinho
+
 document.getElementById("btn-carinho").addEventListener("click", function () {
   if (gatoDormindo) {
     aviso(`${NOMEDOGATO} está dormindo.`);
@@ -94,7 +91,7 @@ document.getElementById("btn-carinho").addEventListener("click", function () {
   }
 });
 
-//dormir
+
 document.getElementById("btn-acordar").addEventListener("click", function () {
   const acordado = "0x1f63a";
   const dormindo = "0x1f4a4";
@@ -103,12 +100,12 @@ document.getElementById("btn-acordar").addEventListener("click", function () {
     texto.innerText = String.fromCodePoint(acordado);
     gatoDormindo = false;
     imagem.src = `imagens/${elementoAleatorio(fotos)}.png`;
-    aviso(`${NOMEDOGATO} acordou.`);
+    aviso(`${NOMEDOGATO} acordou!.`);
   } else {
     texto.innerText = String.fromCodePoint(dormindo);
     gatoDormindo = true;
     imagem.src = "imagens/dormindo.png";
-    aviso(`${NOMEDOGATO} foi dormir.`);
+    aviso(`${NOMEDOGATO} foi mimir.`);
   }
 });
 

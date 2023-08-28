@@ -1,7 +1,6 @@
 const humorGato = () => String.fromCodePoint(elementoAleatorio(GATOREACOES));
   
   const voceDiz = function (texto) {
-    //mensagem do usuário no chat
     caixaTexto.innerHTML += `<p class = "mensagem-usuario">você: ${texto}</p>`;
   };
   
@@ -14,7 +13,6 @@ const humorGato = () => String.fromCodePoint(elementoAleatorio(GATOREACOES));
   };
   
   const elementoAleatorio = function (vetorElementos) {
-    //retorna um elemento aleatório de um vetor
     return vetorElementos[Math.floor(Math.random() * vetorElementos.length)];
   };
   
@@ -27,16 +25,15 @@ const humorGato = () => String.fromCodePoint(elementoAleatorio(GATOREACOES));
     document.getElementById("acordar").innerText = String.fromCodePoint(0x1f63a);
   };
   
-  // interação
   const atualizaStatus = function (escolherElementos, textStatus) {
     popUp.classList.remove("hidden"); 
-    popUp.innerHTML = " "; //limpa/adicona os elementos
+    popUp.innerHTML = " "; 
     escolherElementos.forEach((element) => {
       popUp.innerHTML += `<p class = "radio-btn" ><input type="radio" name="radio" />${String.fromCodePoint(
         element
       )} </p>`;
     });
-    popUp.innerHTML += `<input type="button" value="Selecionar" id="fechar-pop-up" />`;
+    popUp.innerHTML += `<input type="button" value="selecionar" id="fechar-pop-up" class="conversar" />`;
     document
       .getElementById("fechar-pop-up")
       .addEventListener("click", function () {
